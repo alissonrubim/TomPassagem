@@ -6,17 +6,18 @@ package com.example.aluno.tompassagem.models;
 
 public class Usuario {
 
-    String id, email, nome, senha, login;
+    String id, email, nome, senha, login, token;
 
     public Usuario() {
     }
 
-    public Usuario(String id, String email, String nome, String senha, String login) {
+    public Usuario(String id, String email, String nome, String senha, String login, String token) {
         this.id = id;
         this.email = email;
         this.nome = nome;
         this.senha = senha;
         this.login = login;
+        this.token = token;
     }
 
     public String getId() {
@@ -57,5 +58,13 @@ public class Usuario {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

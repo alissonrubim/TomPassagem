@@ -5,7 +5,7 @@ package com.example.aluno.tompassagem.models;
  */
 
 public class Voo {
-    String id, valorPass, Data;
+    String id, valorPass, data;
     Origem origem;
     Destino destino;
 
@@ -15,7 +15,7 @@ public class Voo {
     public Voo(String id, String valorPass, String data, Origem origem, Destino destino) {
         this.id = id;
         this.valorPass = valorPass;
-        Data = data;
+        this.data = data;
         this.origem = origem;
         this.destino = destino;
     }
@@ -37,11 +37,11 @@ public class Voo {
     }
 
     public String getData() {
-        return Data;
+        return data;
     }
 
     public void setData(String data) {
-        Data = data;
+        this.data = data;
     }
 
     public Origem getOrigem() {
