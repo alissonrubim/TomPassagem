@@ -18,7 +18,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class ServicoLogin extends AsyncTask<String,Void,String> {
     @Override
-    protected String doInBackground(String... strings) {
+    protected String doInBackground(String... param) {
 
         URL url = null;
         try {
@@ -33,8 +33,9 @@ public class ServicoLogin extends AsyncTask<String,Void,String> {
             urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setRequestProperty("X-Environment", "android");
 
-            String login = "{\"login\": \"zeze\"," +
-                    "\"senha\": \"123\" }";
+            String login ="{\"login\":\""+param[0]+"\","+
+                    "\"senha\":\""+param[1]+"\""+"}";
+
             urlConnection.setDoOutput(true);
             urlConnection.getOutputStream().write(login.getBytes());
 
