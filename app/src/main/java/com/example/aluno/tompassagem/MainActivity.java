@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.aluno.tompassagem.Service.ServicoLogin;
-import com.example.aluno.tompassagem.models.Usuario;
+import com.example.aluno.tompassagem.api.Api;
+import com.example.aluno.tompassagem.api.LoginApi;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,18 +36,22 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String token = "",resp = "";
                 try {
-                    resp = new ServicoLogin().execute(edtLogin.getText().toString(), edtSenha.getText().toString()).get();
-                    token = resp.substring(resp.indexOf("token")+8,resp.indexOf("}")-1);
+                    String token = (new LoginApi()).Login("zeze", "123");
+
+                    if(token.isEmpty()){
+                        Toast.makeText(getApplicationContext(),"Usuário ou senha incorretos",Toast.LENGTH_LONG).show();
+                    }else{
+                        Api.AccessToken = token;
+                        Intent it = new Intent(getApplicationContext(), PesquisarVoosActivity.class);
+                        startActivity(it);
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 } catch (Exception e) {
-                    resp = e.getMessage();
+                    e.printStackTrace();
                 }
-
-                Toast.makeText(getApplicationContext(),resp+" - "+token,Toast.LENGTH_LONG).show();
-
-                Intent it = new Intent(getApplicationContext(), PesquisarVoosActivity.class);
-                startActivity(it);
             }
         });
     }

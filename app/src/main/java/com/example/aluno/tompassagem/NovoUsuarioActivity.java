@@ -7,8 +7,8 @@ import android.widget.EditText;
 
 public class NovoUsuarioActivity extends AppCompatActivity {
 
-    Button btnSalvar, btnVoltar;
-    EditText edtLogin, edtSenha, edtNome, edtEmail;
+    private Button btnSalvar, btnVoltar;
+    private EditText edtLogin, edtSenha, edtNome, edtEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +16,6 @@ public class NovoUsuarioActivity extends AppCompatActivity {
 
         binding();
     }
-
 
     private void binding() {
         btnSalvar = findViewById(R.id.btnSalvar);
