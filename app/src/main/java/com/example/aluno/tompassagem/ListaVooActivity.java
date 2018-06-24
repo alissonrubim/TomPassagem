@@ -4,17 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.aluno.tompassagem.api.VooApi;
+import com.example.aluno.tompassagem.helper.ListaVooAdapter;
 import com.example.aluno.tompassagem.models.Voo;
 
 import java.util.ArrayList;
 
 public class ListaVooActivity extends AppCompatActivity {
 
-    private ArrayList<Voo> listaVoo = new ArrayList<Voo>();
+    public static ArrayList<Voo> listaVoo = new ArrayList<Voo>();
     private ListView lstVoo;
     private Button buttonPesquisar;
 
@@ -33,12 +35,24 @@ public class ListaVooActivity extends AppCompatActivity {
             }
         });
 
+        lstVoo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(getApplicationContext(), DetalhesVooActivity.class);
+                intent.putExtra("VooIndex", position);
+                startActivity(intent);
+            }
+        });
+
         loadListaVoos();
     }
 
     private void loadListaVoos(){
         try {
             listaVoo = (new VooApi()).BuscarTodos();
+            ListaVooAdapter adapter = new ListaVooAdapter(getApplicationContext(), listaVoo);
+            lstVoo.setAdapter(adapter);
         } catch (Exception e) {
             e.printStackTrace();
         }

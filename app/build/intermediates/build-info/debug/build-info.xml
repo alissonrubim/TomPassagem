@@ -5,27 +5,27 @@
     build-mode="COLD"
     density="xhdpi"
     format="10"
-    ir-eligibility="FIELD_REMOVED"
+    ir-eligibility="FIELD_TYPE_CHANGE"
     plugin-version="3.1.3"
-    timestamp="1529865141815"
+    timestamp="1529869891703"
     token="7907684172365136474"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="283" />
+        duration="138" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="16" />
+        duration="51" />
     <task
         name="verifier"
-        duration="1" />
+        duration="2" />
 
     <artifact
-        location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
         type="SPLIT" />
     <artifact
         location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
@@ -75,7 +75,16 @@
     <build
         build-mode="COLD"
         ir-eligibility="CLASS_ADDED"
-        timestamp="1529861615105"
+        timestamp="1529868211446"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1529869292549"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -84,7 +93,7 @@
             location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
@@ -92,20 +101,11 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1529863041938"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1529864503520"
+        timestamp="1529869470853"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
@@ -113,11 +113,11 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_REMOVED"
-        timestamp="1529865141815"
+        ir-eligibility="FIELD_TYPE_CHANGE"
+        timestamp="1529869891703"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
             location="/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
