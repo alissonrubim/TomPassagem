@@ -6,7 +6,7 @@ package com.example.aluno.tompassagem.models;
 
 public class Destino {
 
-    String cidade, aeroporto, id;
+    private String cidade, aeroporto, id;
 
 
     public Destino() {

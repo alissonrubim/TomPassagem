@@ -6,7 +6,7 @@ package com.example.aluno.tompassagem.models;
 
 public class Origem {
 
-    String cidade, aeroporto, id, dataVoo;
+    private String cidade, aeroporto, id, dataVoo;
 
     public Origem() {
     }

@@ -6,9 +6,9 @@ package com.example.aluno.tompassagem.models;
 
 public class Poltrona {
 
-    String id, assento;
-    Boolean ocupado;
-    Usuario usur;
+    private String id, assento;
+    private Boolean ocupado;
+    private Usuario usur;
 
     public Poltrona() {
     }

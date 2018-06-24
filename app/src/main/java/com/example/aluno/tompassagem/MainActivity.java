@@ -13,9 +13,8 @@ import com.example.aluno.tompassagem.models.Usuario;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLogin, btnCad;
-    EditText edtLogin, edtSenha;
-    String token = "",resp = "";
+    private Button btnLogin, btnCad;
+    private EditText edtLogin, edtSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,17 +26,15 @@ public class MainActivity extends AppCompatActivity {
         btnCad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, NovoUsuarioActivity.class);
-
-                startActivity(it);
+            Intent it = new Intent(getApplicationContext(), NovoUsuarioActivity.class);
+            startActivity(it);
             }
         });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                String token = "",resp = "";
                 try {
                     resp = new ServicoLogin().execute(edtLogin.getText().toString(), edtSenha.getText().toString()).get();
                     token = resp.substring(resp.indexOf("token")+8,resp.indexOf("}")-1);
@@ -47,13 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),resp+" - "+token,Toast.LENGTH_LONG).show();
 
-                Intent it = new Intent(MainActivity.this, PesquisarVoosActivity.class);
-
+                Intent it = new Intent(getApplicationContext(), PesquisarVoosActivity.class);
                 startActivity(it);
             }
         });
-
-
     }
 
     private void binding() {

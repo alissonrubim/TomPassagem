@@ -6,7 +6,7 @@ package com.example.aluno.tompassagem.models;
 
 public class Usuario {
 
-    String id, email, nome, senha, login, token;
+    private String id, email, nome, senha, login, token;
 
     public Usuario() {
     }

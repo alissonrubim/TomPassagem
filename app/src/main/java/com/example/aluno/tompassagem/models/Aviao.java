@@ -5,7 +5,7 @@ package com.example.aluno.tompassagem.models;
  */
 
 public class Aviao {
-    String id, capacidade, modelo, prefixo;
+    private String id, capacidade, modelo, prefixo;
 
     public Aviao() {
     }
