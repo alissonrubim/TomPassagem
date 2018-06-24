@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class VooApi extends Api {
     public ArrayList<Voo> BuscarTodos() throws Exception {
-        String JSONresult = this.Execute("voo",  null, Api.UsuarioLogado.getToken());
+        String JSONresult = this.Execute("voo",  null, Api.UsuarioLogado.getToken(), "GET");
         return (new Voo()).JSONtoList(JSONresult);
     }
 }

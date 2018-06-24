@@ -22,18 +22,14 @@ public class Api {
         private String action;
         private String JSONParameters;
         private String token;
+        private String method;
 
 
-        public Servico(String action, String JSONParameters){
-            this.action = action;
-            this.JSONParameters = JSONParameters;
-            this.token = "";
-        }
-
-        public Servico(String action, String JSONParameters, String token){
+        public Servico(String action, String JSONParameters, String token, String method){
             this.action = action;
             this.JSONParameters = JSONParameters;
             this.token = token;
+            this.method = method;
         }
 
         @Override
@@ -42,7 +38,7 @@ public class Api {
             try {
                 URL url = new URL("https://service.davesmartins.com.br/api/" + action);
                 HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("POST");
+                urlConnection.setRequestMethod(method);
                 urlConnection.setReadTimeout(95 * 1000);
                 urlConnection.setConnectTimeout(95 * 1000);
                 urlConnection.setDoInput(true);
@@ -53,12 +49,14 @@ public class Api {
                     urlConnection.setRequestProperty("code", token);
 
                 urlConnection.setDoOutput(true);
-                if(!JSONParameters.isEmpty())
+                if(JSONParameters != null && !JSONParameters.isEmpty())
                     urlConnection.getOutputStream().write(JSONParameters.getBytes());
 
                 urlConnection.connect();
 
-                if (urlConnection.getResponseCode() == 200) {
+                int urlRequestCode = urlConnection.getResponseCode();
+
+                if (urlRequestCode == 200) {
                     InputStream responseBody = urlConnection.getInputStream();
                     InputStreamReader responseBodyReader = new InputStreamReader(responseBody, "UTF-8");
                     BufferedReader reader = new BufferedReader(responseBodyReader);
@@ -87,13 +85,9 @@ public class Api {
         }
     }
 
-    protected String Execute(String action, String JSONParameters) throws MalformedURLException, IOException, Exception{
-        return Execute(action, JSONParameters, null);
-    }
 
-
-    protected String Execute(String action, String JSONParameters, String token) throws MalformedURLException, IOException, Exception{
-        Servico servico = new Servico(action, JSONParameters, token);
+    protected String Execute(String action, String JSONParameters, String token, String method) throws MalformedURLException, IOException, Exception{
+        Servico servico = new Servico(action, JSONParameters, token, method);
         String result = servico.execute().get();
         return result;
     }

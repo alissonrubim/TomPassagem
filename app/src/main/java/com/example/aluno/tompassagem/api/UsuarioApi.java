@@ -4,7 +4,7 @@ import com.example.aluno.tompassagem.models.Usuario;
 
 public class UsuarioApi extends Api {
     public boolean Cadastrar(Usuario usuario) throws Exception {
-        String JSONresult = this.Execute("usuarios",  usuario.toJSON());
+        String JSONresult = this.Execute("usuarios",  usuario.toJSON(), null, "POST");
         if(!JSONresult.isEmpty()){
             usuario.applyJSON(JSONresult);
             return true;
