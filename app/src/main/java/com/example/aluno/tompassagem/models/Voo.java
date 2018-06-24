@@ -15,9 +15,20 @@ import java.util.ArrayList;
  */
 
 public class Voo implements ApiModel {
-    String id, valorPass, data;
-    Origem origem;
-    Destino destino;
+
+    public String id, valorPass, data;
+    public Origem origem;
+    public Destino destino;
+
+    public Aviao getAviao() {
+        return aviao;
+    }
+
+    public void setAviao(Aviao aviao) {
+        this.aviao = aviao;
+    }
+
+    public Aviao aviao;
 
     public Voo() {
     }
@@ -86,9 +97,70 @@ public class Voo implements ApiModel {
         if(!JSONresult.isEmpty()) {
             JSONArray json = new JSONArray(JSONresult);
             for(int i=0; i<json.length(); i++){
-                JSONObject voo = json.getJSONObject(i);
-                Voo vooobj = new Voo();
-                lista.add(vooobj);
+                JSONObject obj = json.getJSONObject(i);
+                Voo voo = new Voo();
+                if(obj.has("id"))
+                    voo.setId(obj.getString("id"));
+                if(obj.has("origem")){
+                    JSONObject objOrigem = obj.getJSONObject("origem");
+                    Origem origem = new Origem();
+                    if(objOrigem.has("id"))
+                        origem.setId(objOrigem.getString("id"));
+
+                    if(objOrigem.has("aeroporto"))
+                        origem.setAeroporto(objOrigem.getString("aeroporto"));
+
+                    if(objOrigem.has("cidade"))
+                        origem.setCidade(objOrigem.getString("cidade"));
+
+                    voo.setOrigem(origem);
+                }
+
+                if(obj.has("destino")){
+                    JSONObject objOrigem = obj.getJSONObject("origem");
+                    Destino origem = new Destino();
+                    if(objOrigem.has("id"))
+                        origem.setId(objOrigem.getString("id"));
+
+                    if(objOrigem.has("aeroporto"))
+                        origem.setAeroporto(objOrigem.getString("aeroporto"));
+
+                    if(objOrigem.has("cidade"))
+                        origem.setCidade(objOrigem.getString("cidade"));
+
+                    voo.setDestino(origem);
+                }
+
+                if(obj.has("dataVoo")) {
+                    voo.setData(obj.getString("dataVoo"));
+                }
+
+                if(obj.has("valorPassagem")) {
+                    voo.setValorPass(obj.getString("valorPassagem"));
+                }
+
+                if(obj.has("aviao")) {
+                    JSONObject objOrigem = obj.getJSONObject("aviao");
+                    Aviao origem = new Aviao();
+                    if(objOrigem.has("id"))
+                        origem.setId(objOrigem.getString("id"));
+
+                    if(objOrigem.has("prefixo"))
+                        origem.setPrefixo(objOrigem.getString("prefixo"));
+
+                    if(objOrigem.has("modelo"))
+                        origem.setModelo(objOrigem.getString("modelo"));
+
+
+                    if(objOrigem.has("capacidade"))
+                        origem.setCapacidade(objOrigem.getString("capacidade"));
+
+                    voo.setAviao(origem);
+                }
+
+
+                lista.add(voo);
+
             }
         }
 

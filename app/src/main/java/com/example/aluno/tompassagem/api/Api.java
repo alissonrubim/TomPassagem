@@ -37,25 +37,29 @@ public class Api {
             String result = null;
             try {
                 URL url = new URL("https://service.davesmartins.com.br/api/" + action);
+
                 HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
-                urlConnection.setRequestMethod(method);
+
+                if(method == "GET")
+                    urlConnection.setRequestMethod("GET");
+                else
+                    urlConnection.setRequestMethod("POST");
+
                 urlConnection.setReadTimeout(95 * 1000);
                 urlConnection.setConnectTimeout(95 * 1000);
                 urlConnection.setDoInput(true);
                 urlConnection.setRequestProperty("Accept", "application/json");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
-                urlConnection.setRequestProperty("X-Environment", "android");
                 if(token != null && !token.isEmpty())
                     urlConnection.setRequestProperty("code", token);
+                urlConnection.setRequestProperty("X-Environment", "android");
 
-                urlConnection.setDoOutput(true);
                 if(JSONParameters != null && !JSONParameters.isEmpty())
                     urlConnection.getOutputStream().write(JSONParameters.getBytes());
 
                 urlConnection.connect();
 
                 int urlRequestCode = urlConnection.getResponseCode();
-
                 if (urlRequestCode == 200) {
                     InputStream responseBody = urlConnection.getInputStream();
                     InputStreamReader responseBodyReader = new InputStreamReader(responseBody, "UTF-8");
