@@ -2,6 +2,8 @@ package com.example.aluno.tompassagem.api;
 
 import android.os.AsyncTask;
 
+import com.example.aluno.tompassagem.models.Usuario;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +16,7 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 public class Api {
-    public static String AccessToken;
+    public static Usuario UsuarioLogado;
 
     public class Servico extends AsyncTask<String,Void,String> {
         private String action;

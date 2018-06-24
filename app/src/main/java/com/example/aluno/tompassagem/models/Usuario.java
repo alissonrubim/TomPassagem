@@ -1,10 +1,15 @@
 package com.example.aluno.tompassagem.models;
 
+import com.example.aluno.tompassagem.api.ApiModel;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by aluno on 21/06/2018.
  */
 
-public class Usuario {
+public class Usuario implements ApiModel {
 
     private String id, email, nome, senha, login, token;
 
@@ -66,5 +71,42 @@ public class Usuario {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    @Override
+    public String toJSON() {
+        JSONObject jsonObject= new JSONObject();
+        try {
+            jsonObject.put("id", getId());
+            jsonObject.put("email", getEmail());
+            jsonObject.put("nome", getNome());
+            jsonObject.put("login", getLogin());
+            jsonObject.put("login", getSenha());
+
+            return jsonObject.toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public void applyJSON(String json) {
+        Usuario result = null;
+        try {
+            JSONObject object = new JSONObject(json);
+            if(object.has("id"))
+            this.setId(object.getString("id"));
+            if(object.has("token"))
+            this.setToken(object.getString("token"));
+            if(object.has("login"))
+                this.setLogin(object.getString("login"));
+            if(object.has("nome"))
+                this.setNome(object.getString("nome"));
+            if(object.has("email"))
+                this.setEmail(object.getString("email"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

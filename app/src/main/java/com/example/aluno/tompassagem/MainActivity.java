@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.aluno.tompassagem.api.Api;
 import com.example.aluno.tompassagem.api.LoginApi;
+import com.example.aluno.tompassagem.models.Usuario;
 
 import java.io.IOException;
 
@@ -37,12 +38,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String token = (new LoginApi()).Login("zeze", "123");
+                    String json = (new LoginApi()).Login(edtLogin.getText().toString(), edtSenha.getText().toString());
 
-                    if(token.isEmpty()){
+                    if(json.isEmpty()){
                         Toast.makeText(getApplicationContext(),"Usuário ou senha incorretos",Toast.LENGTH_LONG).show();
                     }else{
-                        Api.AccessToken = token;
+                        Usuario usuario = new Usuario();
+                        usuario.applyJSON(json);
+                        Api.UsuarioLogado = usuario;
                         Intent it = new Intent(getApplicationContext(), PesquisarVoosActivity.class);
                         startActivity(it);
                     }

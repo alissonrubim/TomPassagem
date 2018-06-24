@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by aluno on 22/06/2018.
  */
 
-public class ServicoCadastro extends AsyncTask<String, Void, String> {
+public class _ServicoCadastro extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... strings) {
 

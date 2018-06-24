@@ -7,12 +7,13 @@
     tools:context="com.example.aluno.tompassagem.ListaVooActivity">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="68dp"
-        android:gravity="center_vertical|center_horizontal|center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView6"
@@ -20,34 +21,16 @@
             android:layout_height="wrap_content"
             android:text="Lista de Voos"
             android:textAlignment="center"
-            android:textSize="24sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="337dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="84dp">
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="26dp" />
 
         <ListView
             android:id="@+id/lstVoos"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="84dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="74dp"
-        android:gravity="center_vertical|center_horizontal|center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="429dp">
-
-        <Button
-            android:id="@+id/btnVoltarP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Voltar" />
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
