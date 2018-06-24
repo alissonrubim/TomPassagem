@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/5011cb24b26e0af63db5093e6841944d/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/eab19692680b5d75d5ef63dc665d7a6f/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/19fa518a9d79ae9612eb47dd676a7706/AndroidManifest.xml:17:1-28:12
@@ -15,25 +15,29 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alissonrubim/
 MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/6520b84dc712b85df91fd96cbeeab6ee/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/d37c7ad79dd9ac53e4d6e83eaa0358b5/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4018c78f1c970de31019fc73d962df83/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
 	package
 		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
 		INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-27:12
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:1-29:12
 		INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:5:5-24:19
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:7:5-27:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/5011cb24b26e0af63db5093e6841944d/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/5011cb24b26e0af63db5093e6841944d/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/eab19692680b5d75d5ef63dc665d7a6f/AndroidManifest.xml:9:5-20
@@ -57,55 +61,55 @@ MERGED from [com.android.support:support-compat:26.1.0] /Users/alissonrubim/.gra
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4018c78f1c970de31019fc73d962df83/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alissonrubim/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/4018c78f1c970de31019fc73d962df83/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:11:9-40
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:13:9-40
 activity#com.example.aluno.tompassagem.MainActivity
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:12:9-18:20
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:12:19-47
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:13:13-17:29
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:14:17-69
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:14:25-66
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:18:27-74
 activity#com.example.aluno.tompassagem.NovoUsuarioActivity
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:19:9-57
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:21:9-57
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:19:19-54
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:21:19-54
 activity#com.example.aluno.tompassagem.PesquisarVoosActivity
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:20:9-59
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:22:9-59
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:20:19-56
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:22:19-56
 activity#com.example.aluno.tompassagem.ListaVooActivity
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:21:9-54
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:23:9-54
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:21:19-51
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:23:19-51
 activity#com.example.aluno.tompassagem.DetalhesVooActivity
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:22:9-57
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:24:9-57
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:22:19-54
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:24:19-54
 activity#com.example.aluno.tompassagem.ValidaCartaoActivity
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:23:9-67
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:25:9-58
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:23:19-55
-uses-permission#android.permission.INTERNET
-ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:25:5-67
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:25:19-55
+activity#com.example.aluno.tompassagem.ListaPoltronaActivity
+ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:26:9-68
 	android:name
-		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:25:22-64
+		ADDED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml:26:19-56
 uses-sdk
 INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/alissonrubim/Desktop/TomPassagem/app/src/main/AndroidManifest.xml

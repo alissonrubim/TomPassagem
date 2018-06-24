@@ -31,6 +31,7 @@
         <activity android:name="com.example.aluno.tompassagem.ListaVooActivity" />
         <activity android:name="com.example.aluno.tompassagem.DetalhesVooActivity" />
         <activity android:name="com.example.aluno.tompassagem.ValidaCartaoActivity" />
+        <activity android:name="com.example.aluno.tompassagem.ListaPoltronaActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

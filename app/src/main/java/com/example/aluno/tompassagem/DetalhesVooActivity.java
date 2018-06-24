@@ -1,10 +1,13 @@
 package com.example.aluno.tompassagem;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.aluno.tompassagem.helper.ListaPoltronaAdapter;
 import com.example.aluno.tompassagem.models.Voo;
 
 import org.w3c.dom.Text;
@@ -13,7 +16,7 @@ public class DetalhesVooActivity extends AppCompatActivity {
 
     private Button btnComprar;
     private TextView txtOrigem, txtDestino, txtAeroO, txtAeroD, txtDataViagem, txtPrefixo, txtModelo, txtCap;
-
+    private Voo voo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,7 @@ public class DetalhesVooActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalhes_voo);
 
         int vooindex = getIntent().getExtras().getInt("VooIndex");
-        Voo voo = ListaVooActivity.listaVoo.get(vooindex);
+        voo = ListaVooActivity.listaVoo.get(vooindex);
 
         binding();
 
@@ -33,6 +36,16 @@ public class DetalhesVooActivity extends AppCompatActivity {
         txtPrefixo.setText(voo.getAviao().getPrefixo());
         txtModelo.setText(voo.getAviao().getModelo());
         txtCap.setText(voo.getAviao().getCapacidade());
+
+
+        btnComprar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListaPoltronaActivity.class);
+                intent.putExtra("VooId", voo.getId());
+                startActivity(intent);
+            }
+        });
     }
 
     private void binding() {
