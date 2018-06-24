@@ -15,22 +15,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView6"
+        <Button
+            android:id="@+id/buttonPesquisar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lista de Voos"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="26dp" />
+            android:text="Pesquisar voos" />
 
         <ListView
             android:id="@+id/lstVoos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="84dp" />
+            tools:layout_editor_absoluteY="84dp" >
+
+        </ListView>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

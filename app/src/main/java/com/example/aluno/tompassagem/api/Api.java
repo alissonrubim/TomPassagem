@@ -21,11 +21,21 @@ public class Api {
     public class Servico extends AsyncTask<String,Void,String> {
         private String action;
         private String JSONParameters;
+        private String token;
+
 
         public Servico(String action, String JSONParameters){
             this.action = action;
             this.JSONParameters = JSONParameters;
+            this.token = "";
         }
+
+        public Servico(String action, String JSONParameters, String token){
+            this.action = action;
+            this.JSONParameters = JSONParameters;
+            this.token = token;
+        }
+
         @Override
         protected String doInBackground(String... param) {
             String result = null;
@@ -39,6 +49,8 @@ public class Api {
                 urlConnection.setRequestProperty("Accept", "application/json");
                 urlConnection.setRequestProperty("Content-Type", "application/json");
                 urlConnection.setRequestProperty("X-Environment", "android");
+                if(token != null && !token.isEmpty())
+                    urlConnection.setRequestProperty("code", token);
 
                 urlConnection.setDoOutput(true);
                 if(!JSONParameters.isEmpty())
@@ -59,7 +71,7 @@ public class Api {
 
                     result = buffer.toString();
                 } else {
-                    result = urlConnection.getResponseCode()+"";
+                    result = "";
                 }
 
             } catch (MalformedURLException e) {
@@ -76,7 +88,12 @@ public class Api {
     }
 
     protected String Execute(String action, String JSONParameters) throws MalformedURLException, IOException, Exception{
-        Servico servico = new Servico(action, JSONParameters);
+        return Execute(action, JSONParameters, null);
+    }
+
+
+    protected String Execute(String action, String JSONParameters, String token) throws MalformedURLException, IOException, Exception{
+        Servico servico = new Servico(action, JSONParameters, token);
         String result = servico.execute().get();
         return result;
     }

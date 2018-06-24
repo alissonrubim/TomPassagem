@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         Usuario usuario = new Usuario();
                         usuario.applyJSON(json);
                         Api.UsuarioLogado = usuario;
-                        Intent it = new Intent(getApplicationContext(), PesquisarVoosActivity.class);
+                        Intent it = new Intent(getApplicationContext(), ListaVooActivity.class);
                         startActivity(it);
                     }
 

@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class LoginApi extends Api {
     public String Login(String login, String senha) throws Exception {
-        String JSONresult = this.Execute("usuarios/login",  "{\"login\": \"zeze\"," +
-                "\"senha\": \"123\" }");
+        String JSONresult = this.Execute("usuarios/login",  "{\"login\": \""+login+"\"," +
+                "\"senha\": \""+senha+"\" }");
         return JSONresult;
     }
 }
