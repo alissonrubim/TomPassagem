@@ -18,7 +18,7 @@ public class ListaVooActivity extends AppCompatActivity {
 
     public static ArrayList<Voo> listaVoo = new ArrayList<Voo>();
     private ListView lstVoo;
-    private Button buttonPesquisar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,6 @@ public class ListaVooActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_voo);
 
         binding();
-
-        buttonPesquisar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PesquisarVoosActivity.class);
-                startActivityForResult(intent, 100);
-            }
-        });
 
         lstVoo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -60,7 +52,6 @@ public class ListaVooActivity extends AppCompatActivity {
 
     private void binding() {
         lstVoo = findViewById(R.id.lstVoos);
-        buttonPesquisar = findViewById(R.id.buttonPesquisar);
     }
 
     @Override

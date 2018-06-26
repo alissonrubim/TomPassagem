@@ -1,5 +1,6 @@
 package com.example.aluno.tompassagem;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,19 +33,23 @@ public class ListaPoltronaActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
                 Poltrona poltrona = listaPoltronas.get(position);
                 if(poltrona.getOcupado()){
                     Toast.makeText(getApplicationContext(), "Esta poltrona já esta ocupada!", Toast.LENGTH_LONG);
                 }else{
-
+                    Intent intent = new Intent(getApplicationContext(), DetalhesVooActivity.class);
+                    intent.putExtra("VooIndex", position);
+                    startActivity(intent);
                 }
             }
         });
 
-        carregaLista();
+        loadListaPolt();
     }
 
-    private void carregaLista(){
+    private void loadListaPolt(){
         try {
             listaPoltronas = (new VooApi()).BuscaPoltronas(vooId);
             ListaPoltronaAdapter adapter = new ListaPoltronaAdapter(getApplicationContext(), listaPoltronas);

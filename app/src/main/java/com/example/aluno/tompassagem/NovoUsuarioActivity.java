@@ -37,6 +37,7 @@ public class NovoUsuarioActivity extends AppCompatActivity {
                         finish();
                     }else{
                         Toast.makeText(getApplicationContext(),"Não foi possível cadastrar um usuário, tente novamente!",Toast.LENGTH_LONG).show();
+                        finish();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
