@@ -10,6 +10,10 @@ public class UsuarioApi extends Api {
             return true;
         }
 
+        //String JSONresult = this.Execute("usuarios/login",  "{\"login\": \""+login+"\"," +
+        //        "\"senha\": \""+senha+"\" }", null, "POST");
+        //return JSONresult;
+
         return false;
     }
 }
