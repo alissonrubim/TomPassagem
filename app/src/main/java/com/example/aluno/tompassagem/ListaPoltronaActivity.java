@@ -34,12 +34,11 @@ public class ListaPoltronaActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
                 Poltrona poltrona = listaPoltronas.get(position);
                 if(poltrona.getOcupado()){
                     Toast.makeText(getApplicationContext(), "Esta poltrona já esta ocupada!", Toast.LENGTH_LONG);
                 }else{
-                    Intent intent = new Intent(getApplicationContext(), DetalhesVooActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), ValidaCartaoActivity.class);
                     intent.putExtra("VooIndex", position);
                     startActivity(intent);
                 }
