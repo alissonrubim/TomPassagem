@@ -117,18 +117,18 @@ public class Voo implements ApiModel {
                 }
 
                 if(obj.has("destino")){
-                    JSONObject objOrigem = obj.getJSONObject("origem");
-                    Destino origem = new Destino();
-                    if(objOrigem.has("id"))
-                        origem.setId(objOrigem.getString("id"));
+                    JSONObject objDestino = obj.getJSONObject("destino");
+                    Destino destino = new Destino();
+                    if(objDestino.has("id"))
+                        destino.setId(objDestino.getString("id"));
 
-                    if(objOrigem.has("aeroporto"))
-                        origem.setAeroporto(objOrigem.getString("aeroporto"));
+                    if(objDestino.has("aeroporto"))
+                        destino.setAeroporto(objDestino.getString("aeroporto"));
 
-                    if(objOrigem.has("cidade"))
-                        origem.setCidade(objOrigem.getString("cidade"));
+                    if(objDestino.has("cidade"))
+                        destino.setCidade(objDestino.getString("cidade"));
 
-                    voo.setDestino(origem);
+                    voo.setDestino(destino);
                 }
 
                 if(obj.has("dataVoo")) {

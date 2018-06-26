@@ -81,7 +81,7 @@ public class Usuario implements ApiModel {
             jsonObject.put("email", getEmail());
             jsonObject.put("nome", getNome());
             jsonObject.put("login", getLogin());
-            jsonObject.put("login", getSenha());
+            jsonObject.put("senha", getSenha());
 
             return jsonObject.toString();
         } catch (JSONException e) {
@@ -105,6 +105,8 @@ public class Usuario implements ApiModel {
                 this.setNome(object.getString("nome"));
             if(object.has("email"))
                 this.setEmail(object.getString("email"));
+            if(object.has("senha"))
+                this.setEmail(object.getString("senha"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
