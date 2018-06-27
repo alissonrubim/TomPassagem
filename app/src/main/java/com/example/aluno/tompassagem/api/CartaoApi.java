@@ -6,7 +6,7 @@ package com.example.aluno.tompassagem.api;
 
 public class CartaoApi extends Api {
     public String Cartao(String numero, String mes, String ano, String tarja, String valor) throws Exception {
-        String JSONresult = this.Execute("usuarios/login",  "{\"cartao\": \""+numero+"\"," +
+        String JSONresult = this.Execute("cartao",  "{\"cartao\": \""+numero+"\"," +
                 "\"mes\": \""+mes+"\"," + "\"ano\": \""+ano+"," + "\"tarja\": \""+tarja+"," + "\"valor\": \""+valor+" }", null, "POST");
         return JSONresult;
     }

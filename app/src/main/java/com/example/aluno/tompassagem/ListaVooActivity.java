@@ -38,6 +38,7 @@ public class ListaVooActivity extends AppCompatActivity {
         });
 
         loadListaVoos();
+
     }
 
     private void loadListaVoos(){

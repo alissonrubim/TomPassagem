@@ -30,22 +30,23 @@ public class ListaPoltronaActivity extends AppCompatActivity {
 
         vooId = getIntent().getExtras().getString("VooId");
 
+        loadListaPolt();
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Poltrona poltrona = listaPoltronas.get(position);
-                if(poltrona.getOcupado()){
+                Poltrona poltrona = new Poltrona();
+                if(poltrona.getOcupado() == true){
                     Toast.makeText(getApplicationContext(), "Esta poltrona já esta ocupada!", Toast.LENGTH_LONG);
                 }else{
                     Intent intent = new Intent(getApplicationContext(), ValidaCartaoActivity.class);
-                    intent.putExtra("VooIndex", position);
                     startActivity(intent);
                 }
             }
         });
 
-        loadListaPolt();
+
     }
 
     private void loadListaPolt(){
