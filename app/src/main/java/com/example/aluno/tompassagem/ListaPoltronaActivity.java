@@ -12,13 +12,15 @@ import com.example.aluno.tompassagem.api.VooApi;
 import com.example.aluno.tompassagem.helper.ListaPoltronaAdapter;
 import com.example.aluno.tompassagem.helper.ListaVooAdapter;
 import com.example.aluno.tompassagem.models.Poltrona;
+import com.example.aluno.tompassagem.models.Voo;
 
 import java.util.ArrayList;
 
 public class ListaPoltronaActivity extends AppCompatActivity {
 
     public static ArrayList<Poltrona> listaPoltronas = new ArrayList<>();
-    private String vooId;
+    private int vooindex;
+    private Voo voo;
     private ListView listView;
 
     @Override
@@ -28,7 +30,8 @@ public class ListaPoltronaActivity extends AppCompatActivity {
 
         bind();
 
-        vooId = getIntent().getExtras().getString("VooId");
+        vooindex = getIntent().getExtras().getInt("VooIndex");
+        voo = ListaVooActivity.listaVoo.get(vooindex);
 
         loadListaPolt();
 
@@ -36,11 +39,13 @@ public class ListaPoltronaActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Poltrona poltrona = new Poltrona();
+                Poltrona poltrona = listaPoltronas.get(position);
                 if(poltrona.getOcupado() == true){
                     Toast.makeText(getApplicationContext(), "Esta poltrona já esta ocupada!", Toast.LENGTH_LONG);
                 }else{
                     Intent intent = new Intent(getApplicationContext(), ValidaCartaoActivity.class);
+                    intent.putExtra("VooId", vooindex);
+                    intent.putExtra("PoltronaId", poltrona.getAssento());
                     startActivity(intent);
                 }
             }
@@ -51,7 +56,10 @@ public class ListaPoltronaActivity extends AppCompatActivity {
 
     private void loadListaPolt(){
         try {
-            listaPoltronas = (new VooApi()).BuscaPoltronas(vooId);
+            listaPoltronas = (new VooApi()).BuscaPoltronas(voo.getId());
+            for (Poltrona p:listaPoltronas) {
+                p.setValorPassagem(voo.getValorPass());
+            }
             ListaPoltronaAdapter adapter = new ListaPoltronaAdapter(getApplicationContext(), listaPoltronas);
             listView.setAdapter(adapter);
         } catch (Exception e) {

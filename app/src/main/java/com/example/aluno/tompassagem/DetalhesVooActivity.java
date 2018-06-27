@@ -17,13 +17,14 @@ public class DetalhesVooActivity extends AppCompatActivity {
     private Button btnComprar;
     private TextView txtOrigem, txtDestino, txtAeroO, txtAeroD, txtDataViagem, txtPrefixo, txtModelo, txtCap;
     private Voo voo;
+    private int vooindex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_voo);
 
-        int vooindex = getIntent().getExtras().getInt("VooIndex");
+        vooindex = getIntent().getExtras().getInt("VooIndex");
         voo = ListaVooActivity.listaVoo.get(vooindex);
 
         binding();
@@ -42,10 +43,18 @@ public class DetalhesVooActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ListaPoltronaActivity.class);
-                intent.putExtra("VooId", voo.getId());
-                startActivity(intent);
+                intent.putExtra("VooIndex", vooindex);
+                startActivityForResult(intent, 1);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 1 && resultCode == RESULT_OK){
+            finish();
+        }
     }
 
     private void binding() {

@@ -1,6 +1,7 @@
 package com.example.aluno.tompassagem.helper;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,15 +48,23 @@ public class ListaPoltronaAdapter extends BaseAdapter {
             line = new PoltronaListViewLine();
             line.textViewInfo = convertView.findViewById(R.id.textViewInfo);
             line.textViewDisponivel = convertView.findViewById(R.id.textViewDisponivel);
+            line.textViewValor = convertView.findViewById(R.id.textViewValor);
 
         }else{
             line = (PoltronaListViewLine) convertView.getTag();
+            if(line == null) {
+                line = new PoltronaListViewLine();
+                line.textViewInfo = convertView.findViewById(R.id.textViewInfo);
+                line.textViewDisponivel = convertView.findViewById(R.id.textViewDisponivel);
+                line.textViewValor = convertView.findViewById(R.id.textViewValor);
+            }
         }
 
         Poltrona f = (Poltrona) getItem(position);
         if(line != null) {
             line.textViewInfo.setText("Poltrona " + f.getAssento());
-            line.textViewDisponivel.setText(f.getOcupado().toString());
+            line.textViewDisponivel.setText(f.getOcupado() ? "sim" : "não");
+            line.textViewValor.setText("R$" + f.getValorPassagem());
         }
 
         return convertView;
@@ -64,6 +73,7 @@ public class ListaPoltronaAdapter extends BaseAdapter {
     class PoltronaListViewLine {
         public TextView textViewInfo;
         public TextView textViewDisponivel;
+        public TextView textViewValor;
     }
 }
 

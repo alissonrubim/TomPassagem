@@ -50,14 +50,20 @@ public class ListaVooAdapter extends BaseAdapter{
             line.textViewDestino = convertView.findViewById(R.id.textViewDestino);
         }else{
             line = (VooListViewLine) convertView.getTag();
+            if(line == null) {
+                line = new VooListViewLine();
+                line.textViewInfo = convertView.findViewById(R.id.textViewInfo);
+                line.textViewOrigem = convertView.findViewById(R.id.textViewOrigem);
+                line.textViewDestino = convertView.findViewById(R.id.textViewDestino);
+            }
         }
 
         Voo f = (Voo) getItem(position);
-        if(line != null) {
+
             line.textViewInfo.setText("Voo " + f.getId() + " - " + f.getData());
             line.textViewOrigem.setText(f.getOrigem().getCidade());
             line.textViewDestino.setText(f.getDestino().getCidade());
-        }
+
 
         return convertView;
     }
