@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class Cartao implements ApiModel {
 
-    String numero, validade, tarja, bandeira, status, valor;
+    String numero,validade, tarja, bandeira, status, valor ;
 
     public Cartao() {
     }

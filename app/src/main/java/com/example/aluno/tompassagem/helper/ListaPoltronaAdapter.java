@@ -55,7 +55,7 @@ public class ListaPoltronaAdapter extends BaseAdapter {
         Poltrona f = (Poltrona) getItem(position);
         if(line != null) {
             line.textViewInfo.setText("Poltrona " + f.getAssento());
-            line.textViewDisponivel.setText(f.getOcupado() ? "Ocupado" : "Disponível");
+            line.textViewDisponivel.setText(f.getOcupado().toString());
         }
 
         return convertView;

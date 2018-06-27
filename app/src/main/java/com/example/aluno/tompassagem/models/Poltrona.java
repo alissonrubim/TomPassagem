@@ -14,26 +14,10 @@ import java.util.ArrayList;
 
 public class Poltrona implements ApiModel {
 
-    private String id, assento;
-    private Boolean ocupado;
-    private Usuario usur;
+    String assento,origem, destino, dataVoo , valorPassagem ,aviao;
+    Boolean ocupado;
 
     public Poltrona() {
-    }
-
-    public Poltrona(String id, String assento, Boolean ocupado, Usuario usur) {
-        this.id = id;
-        this.assento = assento;
-        this.ocupado = ocupado;
-        this.usur = usur;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getAssento() {
@@ -44,20 +28,52 @@ public class Poltrona implements ApiModel {
         this.assento = assento;
     }
 
+    public String getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(String origem) {
+        this.origem = origem;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public String getDataVoo() {
+        return dataVoo;
+    }
+
+    public void setDataVoo(String dataVoo) {
+        this.dataVoo = dataVoo;
+    }
+
+    public String getValorPassagem() {
+        return valorPassagem;
+    }
+
+    public void setValorPassagem(String valorPassagem) {
+        this.valorPassagem = valorPassagem;
+    }
+
+    public String getAviao() {
+        return aviao;
+    }
+
+    public void setAviao(String aviao) {
+        this.aviao = aviao;
+    }
+
     public Boolean getOcupado() {
         return ocupado;
     }
 
     public void setOcupado(Boolean ocupado) {
         this.ocupado = ocupado;
-    }
-
-    public Usuario getUsur() {
-        return usur;
-    }
-
-    public void setUsur(Usuario usur) {
-        this.usur = usur;
     }
 
     @Override
@@ -73,22 +89,33 @@ public class Poltrona implements ApiModel {
     public static ArrayList<Poltrona> JSONtoList(String JSONresult) throws JSONException {
         ArrayList<Poltrona> lista = new ArrayList<>();
 
-        if(!JSONresult.isEmpty()) {
+
+            if(!JSONresult.isEmpty()) {
             JSONArray json = new JSONArray(JSONresult);
             for(int i=0; i<json.length(); i++){
                 JSONObject obj = json.getJSONObject(i);
-                Poltrona voo = new Poltrona();
-                if(obj.has("assento")) {
-                    voo.setAssento(obj.getString("assento"));
-                    voo.setId(obj.getString("assento"));
-                }
+                Poltrona poltrona = new Poltrona();
+                if(obj.has("assento"))
+                    poltrona.setAssento(obj.getString("assento"));
+                if(obj.has("origem"))
+                    poltrona.setOrigem(obj.getString("origem"));
+                if(obj.has("destino"))
+                    poltrona.setDestino(obj.getString("destino"));
+                if(obj.has("dataVoo"))
+                    poltrona.setDataVoo(obj.getString("dataVoo"));
+                if(obj.has("valorPassagem"))
+                    poltrona.setValorPassagem(obj.getString("valorPassagem"));
+                if(obj.has("aviao"))
+                    poltrona.setAviao(obj.getString("aviao"));
                 if(obj.has("ocupado"))
-                    voo.setOcupado(obj.getBoolean("ocupado"));
+                    poltrona.setOcupado(obj.getBoolean("ocupado"));
 
-                lista.add(voo);
+                lista.add(poltrona);
             }
         }
 
         return lista;
     }
 }
+
+

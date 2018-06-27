@@ -1,4 +1,4 @@
-#Sun Jun 24 18:52:41 BRT 2018
-base.0=/Users/alissonrubim/Desktop/TomPassagem/app/build/intermediates/transforms/dexMerger/debug/7
+#Tue Jun 26 20:22:16 BRT 2018
+base.0=D\:\\AndroidStudioProjects\\TomPassagem\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
 path.0=classes.dex
 renamed.0=classes.dex
